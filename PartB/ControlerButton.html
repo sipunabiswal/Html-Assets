@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Controller Game</title>
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <script>
+      // Get the canvas element
+      var canvas = document.getElementById("gameCanvas");
+      var context = canvas.getContext("2d");
+      // Set initial square position and size
+      var squareX = 100;
+      var squareY = 100;
+      var squareSize = 50;
+      // Draw the initial red square
+      function drawSquare() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.fillStyle = "red";
+        context.fillRect(squareX, squareY, squareSize, squareSize);
+      }
+      // Update square position based on button presses
+      function moveSquare(direction) {
+        switch (direction) {
+          case "up":
+            squareY -= 10;
+            break;
+          case "down":
+            squareY += 10;
+            break;
+          case "left":
+            squareX -= 10;
+            break;
+          case "right":
+            squareX += 10;
+            break;
+        }
+        drawSquare();
+      }
+      // Event listeners for button presses
+      document.addEventListener("keydown", function (event) {
+        switch (event.key) {
+          case "ArrowUp":
+            moveSquare("up");
+            break;
+          case "ArrowDown":
+            moveSquare("down");
+            break;
+          case "ArrowLeft":
+            moveSquare("left");
+            break;
+          case "ArrowRight":
+            moveSquare("right");
+            break;
+        }
+      });
+      // Initial drawing of the square
+      drawSquare();
+    </script>
+  </body>
+</html>

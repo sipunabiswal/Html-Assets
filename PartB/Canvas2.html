@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <script>
+      // Get the canvas element
+      var canvas = document.getElementById("gameCanvas");
+      var context = canvas.getContext("2d");
+      // Translate
+      context.translate(100, 100);
+      // Draw the original square
+      context.fillStyle = "red";
+      context.fillRect(0, 0, 50, 50);
+      // Reset the transformation matrix
+      context.setTransform(1, 0, 0, 1, 0, 0);
+      // Rotate
+      context.translate(300, 100);
+      context.rotate((Math.PI / 180) * 45);
+      // Draw the rotated square
+      context.fillStyle = "green";
+      context.fillRect(0, 0, 50, 50);
+      // Reset the transformation matrix
+      context.setTransform(1, 0, 0, 1, 0, 0);
+      // Scale
+      context.translate(100, 300);
+      context.scale(2, 0.5);
+      // Draw the scaled square
+      context.fillStyle = "blue";
+      context.fillRect(0, 0, 50, 50);
+      // Reset the transformation matrix
+      context.setTransform(1, 0, 0, 1, 0, 0);
+      // Transformation
+      context.translate(300, 300);
+      context.transform(1, 0.5, 0.5, 1, 0, 0);
+      // Draw the transformed square
+      context.fillStyle = "orange";
+      context.fillRect(0, 0, 50, 50);
+    </script>
+  </body>
+</html>

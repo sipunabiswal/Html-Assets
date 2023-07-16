@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Bezier and Quadratic Curves</title>
+      <style>
+        #canvas {
+          border: 1px solid black;
+        }
+      </style>
+    </head>
+    <body>
+      <canvas id="canvas" width="400" height="400"></canvas>
+      <script>
+        window.onload = function () {
+          var canvas = document.getElementById("canvas");
+          var ctx = canvas.getContext("2d");
+          // Bezier curve
+          ctx.beginPath();
+          ctx.moveTo(50, 200);
+          ctx.bezierCurveTo(50, 100, 200, 100, 200, 200);
+          ctx.strokeStyle = "red";
+          ctx.lineWidth = 2;
+          ctx.stroke();
+          // Quadratic curve
+          ctx.beginPath();
+          ctx.moveTo(250, 200);
+          ctx.quadraticCurveTo(250, 100, 400, 200);
+          ctx.strokeStyle = "blue";
+          ctx.lineWidth = 2;
+          ctx.stroke();
+        };
+      </script>
+    </body>
+  </html>
+</html>

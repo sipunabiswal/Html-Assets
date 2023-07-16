@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Animation Properties</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        position: relative;
+        animation-name: move;
+        animation-duration: 3s;
+        animation-delay: 1s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes move {
+        0% {
+          left: 0;
+        }
+        100% {
+          left: 200px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS Animation Properties Demo</h1>
+    <div class="box"></div>
+  </body>
+</html>
